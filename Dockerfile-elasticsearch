@@ -1,0 +1,6 @@
+ARG ES_VERSION="7.8.0"
+
+
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+RUN bin/elasticsearch-plugin install -b https://d3g5vo6xdbdb9a.cloudfront.net/downloads/elasticsearch-plugins/opendistro-security/opendistro_security-1.9.0.0.zip \
+	&& sh /usr/share/elasticsearch/plugins/opendistro_security/tools/install_demo_configuration.sh
